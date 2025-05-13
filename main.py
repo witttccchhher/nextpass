@@ -2,7 +2,7 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from json import loads
 
-from src import random, readable, passphrase, template
+from generators import random, readable, passphrase, template
 
 app = FastAPI()
 
