@@ -1,8 +1,0 @@
-[tool.poetry]
-name = "nextpass"
-version = "0.1.0"
-readme = "README.md"
-description = "Modern Next.js password generator"
-authors = [
-  "Mikhalkin Gregory <somokill650@gmail.com>"
-]
