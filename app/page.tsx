@@ -14,7 +14,7 @@ import {
   PaginationLink,
 } from "@/components/ui/pagination";
 import { ModeToggle } from "@/components/modetoggle";
-import { Copy, Github } from "lucide-react";
+import { Copy, Github, Loader2 } from "lucide-react";
 
 export default function Home() {
   const [mode, setMode] = useState("random");
@@ -35,7 +35,16 @@ export default function Home() {
 
   const [password, setPassword] = useState("");
 
+  const [isStarting, setIsStarting] = useState(false);
+
   const fetchPassword = async () => {
+    setIsStarting(false);
+    setPassword("");
+
+    const timer = setTimeout(() => {
+      setIsStarting(true);
+    }, 2000);
+
     let url = "";
     switch (mode) {
       case "random":
@@ -63,6 +72,9 @@ export default function Home() {
       toast("Oops!", {
         description: `${error}`,
       });
+    } finally {
+      clearTimeout(timer);
+      setIsStarting(false);
     }
   };
 
@@ -220,6 +232,17 @@ export default function Home() {
               <Copy />
             </Button>
           </div>
+          {isStarting && (
+            <Button
+              variant="ghost"
+              className="text-sm text-muted-foreground text-start"
+            >
+              <Loader2 className="animate-spin" />
+              Backend is starting,
+              <br />
+              please wait about 15 seconds...
+            </Button>
+          )}
         </CardContent>
       </Card>
     </div>
