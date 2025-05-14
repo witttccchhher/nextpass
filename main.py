@@ -10,7 +10,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://nextpass.vercel.app"
+        "https://nextpass-zeta.vercel.app"
     ],  # TODO: указать домен фронта
     allow_credentials=True,
     allow_methods=["*"],
