@@ -19,19 +19,19 @@ import { Copy, Github } from "lucide-react";
 export default function Home() {
   const [mode, setMode] = useState("random");
 
-  const [randomLength, setRandomLength] = useState(12);
+  const [randomLength, setRandomLength] = useState(16);
   const [randomSpecial, setRandomSpecial] = useState(true);
   const [randomNums, setRandomNums] = useState(true);
   const [randomUppercase, setRandomUppercase] = useState(true);
 
-  const [readableLength, setReadableLength] = useState(4);
+  const [readableLength, setReadableLength] = useState(8);
   const [readableNumCount, setReadableNumCount] = useState(2);
 
   const [passphraseLength, setPassphraseLength] = useState(4);
   const [passphraseDelimeter, setPassphraseDelimeter] = useState("-");
   const [passphraseCapitalize, setPassphraseCapitalize] = useState(true);
 
-  const [template, setTemplate] = useState("Cvcvcv##");
+  const [template, setTemplate] = useState("Cvcvcv99!");
 
   const [password, setPassword] = useState("");
 
