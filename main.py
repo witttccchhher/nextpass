@@ -8,7 +8,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # TODO: указать домен фронта
+    allow_origins=[
+        "http://localhost:3000",
+        "https://nextpass.vercel.app"
+    ],  # TODO: указать домен фронта
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
@@ -22,7 +25,7 @@ def randomApi(length: int = Query(16), special: bool = Query(True), nums: bool =
 @app.get("/generate/readable")
 def readableApi(length: int = Query(8), nums: int = Query(2)) -> dict[str, str]:
     password = readable.generate(length, nums)
-    return {"method": "random", "readable": password}
+    return {"method": "readable", "password": password}
 
 @app.get("/generate/passphrase")
 def passphraseApi(length: int = Query(4), delimeter: str = Query("-"), capitalize: bool = Query(True)) -> dict[str, str]:
