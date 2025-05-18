@@ -2,8 +2,8 @@ from random import choice
 from string import digits
 
 def generate(length: int, nums: int) -> str:
-    consonants = "bcdfghjklmnpqrstvwxyz"
-    vowels = "aeiou"
+    consonants = "bcdfghjklmnpqrstvwxz"
+    vowels = "aeiouy"
 
     password = ""
     for _ in range(length // 2):
